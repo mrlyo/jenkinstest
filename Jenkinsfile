@@ -20,10 +20,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                if (isUnix()) {
-                    sh "mvn -Dmaven.test.failure.ignore clean package"
-                } else {
-                    bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+                script{
+                    if (isUnix()) {
+                        sh "mvn -Dmaven.test.failure.ignore clean package"
+                    } else {
+                        bat(/mvn -Dmaven.test.failure.ignore clean package/)
+                    }
                 }
             }
         }
