@@ -14,21 +14,16 @@ pipeline {
             steps{
                 echo 'git pull ...'
                 // Get some code from a GitHub repository
-                git url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                git url: 'https://github.com/mrlyo/sample'
             }
         }
         stage('Build') {
             steps {
                 echo 'Building..'
-                script{
-                    if (isUnix()) {
-                        sh "mvn -Dmaven.test.failure.ignore clean package"
-                    } else {
-                        bat(/mvn -Dmaven.test.failure.ignore clean package/)
-                    }
+
                 }
             }
-        }
+
         stage('Test') {
             steps {
                 echo 'Testing..'
