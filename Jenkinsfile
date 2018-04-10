@@ -2,9 +2,11 @@
 
 pipeline {
     agent any
+    tools{
+        maven 'Maven 3.5.2'
+        jdk 'jdk8'
 
-    maven 'Maven 3.5.2'
-    jdk 'jdk8'
+    }
 
     stages{
         stage('first stage'){
@@ -18,8 +20,8 @@ pipeline {
             steps{
                 echo 'git pull ...'
                 // Get some code from a GitHub repository
-              //  git url: 'https://github.com/mrlyo/sample'
-                
+                //  git url: 'https://github.com/mrlyo/sample'
+
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'C:\\DEV\\samplefromgit']], submoduleCfg: [], userRemoteConfigs: [[url: 'http://github.com/mrlyo/sample']]])
             }
         }
@@ -27,8 +29,8 @@ pipeline {
             steps {
                 echo 'Building..'
 
-                }
             }
+        }
 
         stage('Test') {
             steps {
