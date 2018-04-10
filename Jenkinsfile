@@ -29,7 +29,7 @@ pipeline {
             steps {
                 echo 'Building..'
                // bat('java -jar  C:\\DEV\\jarfromgit\\sample-0.0.1-SNAPSHOT.jar &')
-                "cmd /c cd c:\\DEV\\jarfromgit & start_jars.bat".execute()
+                bat("cmd /c cd c:\\DEV\\jarfromgit & start_jars.bat".execute())
 
             }
         }
