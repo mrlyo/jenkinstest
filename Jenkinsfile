@@ -23,15 +23,17 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-               // bat('java -jar  C:\\DEV\\jarfromgit\\sample-0.0.1-SNAPSHOT.jar &')
+                // bat('java -jar  C:\\DEV\\jarfromgit\\sample-0.0.1-SNAPSHOT.jar &')
                 //"cmd /c cd c:\\DEV\\jarfromgit & start_jars.bat".execute()
                 //def Batchfile = 'C:/DEV/jarfromgit/' + 'start_jars.bat'
-               // Runtime.runtime.exec(Batchfile)
-               // 'C:/DEV/jarfromgit/start_jars.bat'.execute()
-                GroovyShell shell = new GroovyShell()
-                def script = shell.parse(new File('C:/DEV/jarfromgit/groovystart.groovy'))
-                script.mymethod()
+                // Runtime.runtime.exec(Batchfile)
+                // 'C:/DEV/jarfromgit/start_jars.bat'.execute()
 
+                script {
+                    GroovyShell shell = new GroovyShell()
+                    def script = shell.parse(new File('C:/DEV/jarfromgit/groovystart.groovy'))
+                    script.mymethod()
+                }
 
             }
         }
