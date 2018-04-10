@@ -20,10 +20,10 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'C:\\DEV\\jarfromgit']], submoduleCfg: [], userRemoteConfigs: [[url: 'http://github.com/mrlyo/jaronly']]])
             }
         }
-        stage('Build') {
+        stage('Starting App') {
             steps {
                 echo 'Building..'
-               // bat('ps  C:\\DEV\\jarfromgit\\ & start_jars.bat')
+                bat('java -jar C:\\DEV\\jarfromgit\\sample-0.0.1-SNAPSHOT.jar')
                 //"cmd /c cd c:\\DEV\\jarfromgit & start_jars.bat".execute()
                 //def Batchfile = 'C:/DEV/jarfromgit/' + 'start_jars.bat'
                 // Runtime.runtime.exec(Batchfile)
@@ -32,10 +32,7 @@ pipeline {
               //  def powershell = load 'C:\\DEV\\jarfromgit\\start_jars.bat'
                // powershell.exec('ls')
 
-                script{
-                    env.SHELL = load 'C:\\DEV\\jarfromgit\\start_jars.bat'
-                }
-                echo "${env.SHELL}"
+
 
 
             }
