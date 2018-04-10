@@ -28,7 +28,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                mvn build
+                mvn install
 
             }
         }
