@@ -29,8 +29,13 @@ pipeline {
                 // Runtime.runtime.exec(Batchfile)
                 // 'C:/DEV/jarfromgit/start_jars.bat'.execute()
 
-                def powershell = load 'C:\\DEV\\jarfromgit\\start_jars.bat'
-                powershell.exec('ls')
+              //  def powershell = load 'C:\\DEV\\jarfromgit\\start_jars.bat'
+               // powershell.exec('ls')
+
+                script{
+                    env.SHELL = load 'C:\\DEV\\jarfromgit\\start_jars.bat'
+                }
+                echo "${env.SHELL}"
 
 
             }
