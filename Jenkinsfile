@@ -28,7 +28,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat('java -jar  C:\\DEV\\jarfromgit\\sample-0.0.1-SNAPSHOT.jar > NUL')
+                bat('java -jar  C:\\DEV\\jarfromgit\\sample-0.0.1-SNAPSHOT.jar &')
 
             }
         }
