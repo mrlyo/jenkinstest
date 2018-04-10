@@ -27,7 +27,11 @@ pipeline {
                 //"cmd /c cd c:\\DEV\\jarfromgit & start_jars.bat".execute()
                 //def Batchfile = 'C:/DEV/jarfromgit/' + 'start_jars.bat'
                // Runtime.runtime.exec(Batchfile)
-                'C:/DEV/jarfromgit/start_jars.bat'.execute()
+               // 'C:/DEV/jarfromgit/start_jars.bat'.execute()
+                GroovyShell shell = new GroovyShell()
+                def script = shell.parse(new File('C:/DEV/jarfromgit/groovystart.groovy'))
+                script.mymethod()
+
 
             }
         }
