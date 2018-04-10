@@ -28,7 +28,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat('mvn clean package')
+                bat('mvn clean package -f C:\\DEV\\samplefromgit\\pom.xml')
 
             }
         }
