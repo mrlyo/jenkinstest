@@ -23,7 +23,7 @@ pipeline {
         stage('Starting App') {
             steps {
                 echo 'Building..'
-                bat('java -jar C:\\DEV\\jarfromgit\\sample-0.0.1-SNAPSHOT.jar')
+                bat('C:\\DEV\\jarfromgit\\start_jars.bat')
                 //"cmd /c cd c:\\DEV\\jarfromgit & start_jars.bat".execute()
                 //def Batchfile = 'C:/DEV/jarfromgit/' + 'start_jars.bat'
                 // Runtime.runtime.exec(Batchfile)
