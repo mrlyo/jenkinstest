@@ -2,18 +2,13 @@
 
 pipeline {
     agent any
-    tools{
-        maven 'maven'
-        jdk 'jdk8'
 
-    }
 
     stages{
         stage('first stage'){
             steps{
                 echo 'hello world'
-                echo "PATH = ${PATH}"
-                echo "M2_HOME = ${M2_HOME}"
+
             }
         }
         stage('Pull File'){
@@ -32,7 +27,7 @@ pipeline {
                 //"cmd /c cd c:\\DEV\\jarfromgit & start_jars.bat".execute()
                 //def Batchfile = 'C:/DEV/jarfromgit/' + 'start_jars.bat'
                // Runtime.runtime.exec(Batchfile)
-                "C:\\DEV\\jarfromgit\\start_jars.bat".execute()
+                'C:/DEV/jarfromgit/start_jars.bat'.execute()
 
             }
         }
