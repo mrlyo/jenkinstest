@@ -23,18 +23,7 @@ pipeline {
         stage('Starting App') {
             steps {
                 echo 'starting..'
-                bat('C:\\DEV\\jarfromgit\\start_jars.bat')
-                //"cmd /c cd c:\\DEV\\jarfromgit & start_jars.bat".execute()
-                //def Batchfile = 'C:/DEV/jarfromgit/' + 'start_jars.bat'
-                // Runtime.runtime.exec(Batchfile)
-                // 'C:/DEV/jarfromgit/start_jars.bat'.execute()
-
-              //  def powershell = load 'C:\\DEV\\jarfromgit\\start_jars.bat'
-               // powershell.exec('ls')
-
-
-
-
+                bat('cmd /K C:\\DEV\\jarfromgit\\start_jars.bat')
             }
         }
 
